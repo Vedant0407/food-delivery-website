@@ -1,4 +1,4 @@
- let foods=[
+let foods=[
 {name:"Pizza",price:250,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJKJPlaalwOKPpT-IChF_JIU4S8ZMGOiyGQ&s"},
 {name:"Burger",price:150,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd"},
 {name:"Sushi",price:300,img:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c"},
@@ -23,7 +23,10 @@ html+=`
 });
 document.getElementById("menu-grid").innerHTML=html;
 }
-loadMenu();
+
+if(document.getElementById("menu-grid")){
+  loadMenu();
+}
 
 function addToOrder(item){
 selectedList.push(item);
@@ -78,13 +81,28 @@ showToast();
 }
 
 function submitContact(){
-let n=name.value,e=email.value,m=contactMsg.value;
+let n=document.getElementById("name").value;
+let e=document.getElementById("email").value;
+let m=document.getElementById("contactMsg").value;
 let out=document.getElementById("contactOutput");
 
 if(n==""||e==""||m==""){
 out.style.color="red";out.innerText="Fill all fields";
 }else{
 out.style.color="green";out.innerText="Message sent!";
+}
+}
+
+// Added this function for the Feedback page
+function submitFeedback(){
+let n=document.getElementById("feedbackName").value;
+let m=document.getElementById("feedbackMsg").value;
+let out=document.getElementById("feedbackOutput");
+
+if(n==""||m==""){
+out.style.color="red";out.innerText="Please enter your name and feedback!";
+}else{
+out.style.color="green";out.innerText="Thanks for your feedback!";
 }
 }
 
@@ -95,18 +113,22 @@ setTimeout(()=>t.style.display="none",2000);
 }
 
 function playSound(){
-document.getElementById("clickSound").play();
+let sound = document.getElementById("clickSound");
+if(sound) sound.play();
 }
 
 setInterval(()=>{
-document.getElementById("clock").innerText=new Date().toLocaleTimeString();
+let clock = document.getElementById("clock");
+if(clock) clock.innerText=new Date().toLocaleTimeString();
 },1000);
 
 window.onscroll=function(){
-document.getElementById("topBtn").style.display=
-window.scrollY>200?"block":"none";
+let topBtn = document.getElementById("topBtn");
+if(topBtn){
+  topBtn.style.display=window.scrollY>200?"block":"none";
+}
 }
 
 function scrollToTop(){
 window.scrollTo({top:0,behavior:'smooth'});
-}                                                                                                                                                                                                             
+}
