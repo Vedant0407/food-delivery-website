@@ -93,7 +93,6 @@ out.style.color="green";out.innerText="Message sent!";
 }
 }
 
-// Added this function for the Feedback page
 function submitFeedback(){
 let n=document.getElementById("feedbackName").value;
 let m=document.getElementById("feedbackMsg").value;
@@ -131,4 +130,14 @@ if(topBtn){
 
 function scrollToTop(){
 window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// === PROFILE DISPLAY FEATURE ===
+let profileDiv = document.getElementById("profileSection");
+// Retrieve the name stored from the Login Page
+let storedName = localStorage.getItem("userName"); 
+
+if (profileDiv && storedName) {
+    profileDiv.style.display = "flex";
+    profileDiv.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" style="width:25px; margin-right:8px;"> <span>${storedName}</span>`;
 }
