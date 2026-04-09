@@ -1,4 +1,4 @@
-let foods=[
+ let foods=[
 {name:"Pizza",price:250,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJKJPlaalwOKPpT-IChF_JIU4S8ZMGOiyGQ&s"},
 {name:"Burger",price:150,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd"},
 {name:"Sushi",price:300,img:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c"},
@@ -28,31 +28,52 @@ loadMenu();
 function addToOrder(item){
 selectedList.push(item);
 playSound();
+updateList();
+}
 
+function updateList(){
 let html="";
-selectedList.forEach(i=>{
-html+="<li>"+i+"</li>";
+selectedList.forEach((item,index)=>{
+html+=`
+<li>${item}
+<button onclick="removeItem(${index})">❌</button>
+</li>`;
 });
 document.getElementById("selectedItems").innerHTML=html;
 }
 
+function removeItem(index){
+selectedList.splice(index,1);
+updateList();
+}
+
 function validateOrder(){
 if(selectedList.length===0){alert("Select at least one item");return false;}
+
 let type=document.getElementsByName("type");
 let ok=false;
 for(let i=0;i<type.length;i++){if(type[i].checked) ok=true;}
 if(!ok){alert("Select order type");return false;}
+
+let phone=document.getElementById("phone").value;
+if(phone.length!=10 || isNaN(phone)){alert("Enter valid phone number");return false;}
+
 let address=document.getElementById("address").value;
 if(address.trim()===""){alert("Enter address");return false;}
+
 let payment=document.getElementById("payment").value;
 if(payment===""){alert("Select payment");return false;}
+
 return true;
 }
 
 function processOrder(){
 if(!validateOrder()) return;
+
 document.getElementById("output").style.display="block";
-document.getElementById("output").innerText="🎉 Order placed successfully!";
+document.getElementById("output").innerText=
+"Your order is placed successfully! You will get your order in few minutes.";
+
 showToast();
 }
 
@@ -88,4 +109,4 @@ window.scrollY>200?"block":"none";
 
 function scrollToTop(){
 window.scrollTo({top:0,behavior:'smooth'});
-}
+}                                                                                                                                                                                                             
