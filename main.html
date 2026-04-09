@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TasteBite | Home</title>
-
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -17,13 +16,20 @@
 <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
 <span>TasteBite</span>
 </div>
+
 <nav>
 <a href="#menu">Menu</a>
 <a href="#order">Order</a>
 <a href="#contact">Contact</a>
-<a href="feedback.html">Feedback</a> <!-- Added Feedback Link -->
+<a href="feedback.html">Feedback</a>
 </nav>
-<span id="clock"></span>
+
+<div style="display:flex; align-items:center;">
+<span id="clock" style="margin-right: 15px;"></span>
+<!-- The profile section where JS will insert the avatar and name -->
+<div id="profileSection" style="font-weight:bold; color:#e67e22; background: #fff3e6; padding: 5px 15px; border-radius: 20px; display: none;"></div>
+</div>
+
 </div>
 </header>
 
@@ -41,11 +47,9 @@
 <fieldset>
 <p>Selected Items</p>
 <ul id="selectedItems"></ul>
-
 <p>Order Type</p>
 <label><input type="radio" name="type"> Delivery</label>
 <label><input type="radio" name="type"> Pickup</label>
-
 <p>Payment</p>
 <select id="payment">
 <option value="">Select Payment</option>
@@ -53,14 +57,11 @@
 <option>Cash</option>
 <option>UPI</option>
 </select>
-
 <p>Phone Number</p>
 <input type="text" id="phone" placeholder="Enter phone number">
-
 <p>Address</p>
 <textarea id="address"></textarea>
 </fieldset>
-
 <button onclick="processOrder()" class="btn-submit">Place Order</button>
 <div id="output" class="order-output"></div>
 </section>
@@ -73,15 +74,12 @@
 <p>📞 +91 98765 43210</p>
 <p>📧 tastebite@gmail.com</p>
 <p>📍 VIT Vellore</p>
-<iframe src="https://maps.google.com/maps?q=VIT%20Vellore&output=embed"
-width="100%" height="200"></iframe>
+<iframe src="https://maps.google.com/maps?q=VIT%20Vellore&output=embed" width="100%" height="200"></iframe>
 </div>
-
 <div class="contact-form">
 <input type="text" id="name" placeholder="Your Name">
 <input type="email" id="email" placeholder="Your Email">
 <textarea id="contactMsg" placeholder="Your Message"></textarea>
-<!-- Contact button is exactly as you originally had it -->
 <button onclick="submitContact()">Send</button>
 <p id="contactOutput"></p>
 </div>
