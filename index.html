@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TasteBite | Login</title>
-
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -25,16 +24,34 @@
 </header>
 
 <section id="login" style="max-width: 400px; margin: 100px auto; text-align: center;">
-<h2>Login</h2>
+<h2>Welcome</h2>
+<p>Please enter your details to continue</p>
 <div class="contact-form" style="width: 100%; margin-top: 20px; text-align: center;">
-<input type="text" id="username" placeholder="Username" required>
-<input type="password" id="password" placeholder="Password" required>
-<button onclick="window.location.href='main.html'" class="btn-submit" style="width: 100%;">Login</button>
+<input type="text" id="loginName" placeholder="Your Name" required>
+<input type="email" id="loginEmail" placeholder="Your Email" required>
+<button onclick="handleLogin()" class="btn-submit" style="width: 100%;">Enter Website</button>
 </div>
 </section>
 
 <footer style="position: absolute; bottom: 0; width: 100%;">© TasteBite</footer>
 
+<!-- This saves the Name they enter -->
+<script>
+function handleLogin() {
+    let name = document.getElementById('loginName').value;
+    let email = document.getElementById('loginEmail').value;
+    
+    if(name.trim() === "" || email.trim() === ""){
+        alert("Please enter both your Name and Email");
+        return;
+    }
+    
+    // Save to local storage
+    localStorage.setItem("userName", name);
+    // Redirect to main page
+    window.location.href = 'main.html';
+}
+</script>
 <script src="script.js"></script>
 
 </body>
