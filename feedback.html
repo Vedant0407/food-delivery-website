@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TasteBite | Feedback</title>
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="header-container">
+<div class="logo">
+<img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+<span>TasteBite</span>
+</div>
+<nav>
+<a href="main.html#menu">Menu</a>
+<a href="main.html#order">Order</a>
+<a href="main.html#contact">Contact</a>
+<a href="feedback.html">Feedback</a>
+</nav>
+<span id="clock"></span>
+</div>
+</header>
+
+<section id="feedback" style="max-width: 600px; margin: 50px auto; text-align: center;">
+<h2>We Value Your Feedback</h2>
+<p style="margin-bottom: 20px;">Please let us know how your experience was!</p>
+
+<div class="contact-form" style="width: 100%; text-align: left;">
+<input type="text" id="feedbackName" placeholder="Your Name" required>
+<input type="email" id="feedbackEmail" placeholder="Your Email" required>
+
+<p style="margin-top: 15px; margin-bottom: 5px; font-weight: bold;">How would you rate our food?</p>
+<label><input type="radio" name="rating" value="excellent"> Excellent 🌟🌟🌟🌟🌟</label>
+<label><input type="radio" name="rating" value="good"> Good ⭐⭐⭐⭐</label>
+<label><input type="radio" name="rating" value="average"> Average ⭐⭐⭐</label>
+
+<textarea id="feedbackMsg" placeholder="Share your thoughts with us..." style="margin-top: 15px;"></textarea>
+<button onclick="submitFeedback()" class="btn-submit" style="width: 100%;">Submit Feedback</button>
+<p id="feedbackOutput" style="margin-top: 10px; text-align: center; font-weight: bold;"></p>
+</div>
+</section>
+
+<footer style="position: absolute; bottom: 0; width: 100%;">© TasteBite</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
