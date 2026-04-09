@@ -34,13 +34,11 @@
     <label style="font-weight: bold; font-size: 14px; margin-top: 10px; display: block;">Email</label>
     <input type="email" id="loginEmail" placeholder="Your Email">
     
-    <!-- Checkbox for Permission -->
     <label style="margin-top: 15px; display: flex; align-items: center; gap: 8px; cursor: pointer;">
         <input type="checkbox" id="loginTerms" style="width: auto; margin: 0; cursor: pointer;">
         I agree to the terms and permissions
     </label>
     
-    <!-- This is where the red error text will show up -->
     <p id="loginError" style="color: red; font-size: 14px; margin-top: 10px; text-align: center; font-weight: bold; height: 15px;"></p>
     
     <button onclick="handleLogin()" class="btn-submit" style="width: 100%; margin-top: 15px;">Enter Website</button>
@@ -49,30 +47,38 @@
 
 <footer style="position: absolute; bottom: 0; width: 100%;">© TasteBite</footer>
 
-<!-- Custom script strictly for validating the login page -->
 <script>
+// Check if the typed thing is actually an email format!
+function isValidEmail(email) {
+    let standardFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return standardFormat.test(email);
+}
+
 function handleLogin() {
     let name = document.getElementById('loginName').value.trim();
     let email = document.getElementById('loginEmail').value.trim();
     let terms = document.getElementById('loginTerms').checked;
     let errorText = document.getElementById('loginError');
     
-    // Check if Name or Email is totally blank
     if(name === "" || email === ""){
         errorText.innerText = "Error: Please fill in your Name and Email!";
-        return; // Stops the function so they don't get redirected
+        return; 
     }
     
-    // Check if the permission box is ticked
+    // Using our new Email checker
+    if(isValidEmail(email) === false) {
+        errorText.innerText = "Error: Please enter a valid Email address!";
+        return; 
+    }
+    
     if(terms === false){
         errorText.innerText = "Error: You must check the permission box!";
-        return; // Stops the function
+        return; 
     }
     
-    // Everything is filled properly! 
     errorText.innerText = "";
-    localStorage.setItem("userName", name); // Save name to memory
-    window.location.href = 'main.html'; // Send them to the main website
+    localStorage.setItem("userName", name); 
+    window.location.href = 'main.html';
 }
 </script>
 
