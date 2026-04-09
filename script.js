@@ -9,6 +9,12 @@ let foods=[
 
 let selectedList=[];
 
+// Global email validation tool
+function validateEmail(email) {
+    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
 function loadMenu(){
 let html="";
 foods.forEach(f=>{
@@ -34,20 +40,37 @@ playSound();
 updateList();
 }
 
-function updateList(){
-let html="";
-selectedList.forEach((item,index)=>{
-html+=`
-<li>${item}
-<button onclick="removeItem(${index})">❌</button>
-</li>`;
-});
-document.getElementById("selectedItems").innerHTML=html;
+// UPDATED: Groups same items together as Nx DishName
+function updateList() {
+    let counts = {};
+    
+    // Count how many of each item is in the array
+    selectedList.forEach(item => {
+        if(!counts[item]){
+            counts[item] = 1;
+        } else {
+            counts[item]++;
+        }
+    });
+
+    let html = "";
+    // Turn the counts into HTML text
+    Object.keys(counts).forEach(item => {
+        let quantity = counts[item];
+        html += `
+        <li><b>${quantity}x</b> ${item}
+        <!-- Pass the actual item name into the remover function -->
+        <button onclick="removeItem('${item}')">❌</button>
+        </li>`;
+    });
+    
+    document.getElementById("selectedItems").innerHTML=html;
 }
 
-function removeItem(index){
-selectedList.splice(index,1);
-updateList();
+// UPDATED: Removes all instances of that specific dish when X is clicked
+function removeItem(itemToRemove){
+    selectedList = selectedList.filter(item => item !== itemToRemove);
+    updateList();
 }
 
 function validateOrder(){
@@ -80,6 +103,7 @@ document.getElementById("output").innerText=
 showToast();
 }
 
+// UPDATED: Added email checker to Contact
 function submitContact(){
 let n=document.getElementById("name").value;
 let e=document.getElementById("email").value;
@@ -87,21 +111,26 @@ let m=document.getElementById("contactMsg").value;
 let out=document.getElementById("contactOutput");
 
 if(n==""||e==""||m==""){
-out.style.color="red";out.innerText="Fill all fields";
-}else{
-out.style.color="green";out.innerText="Message sent!";
+    out.style.color="red";out.innerText="Fill all fields";
+} else if(!validateEmail(e)) {
+    out.style.color="red";out.innerText="Please enter a valid email address.";
+} else {
+    out.style.color="green";out.innerText="Message sent!";
 }
 }
 
+// UPDATED: Added email checker to Feedback
 function submitFeedback(){
 let n=document.getElementById("feedbackName").value;
-let m=document.getElementById("feedbackMsg").value;
+let e=document.getElementById("feedbackEmail").value;
 let out=document.getElementById("feedbackOutput");
 
-if(n==""||m==""){
-out.style.color="red";out.innerText="Please enter your name and feedback!";
-}else{
-out.style.color="green";out.innerText="Thanks for your feedback!";
+if(n==""||e==""){
+    out.style.color="red";out.innerText="Please fill in all blanks!";
+} else if(!validateEmail(e)) {
+    out.style.color="red";out.innerText="Please enter a valid email address.";
+} else {
+    out.style.color="green";out.innerText="Thanks for your feedback!";
 }
 }
 
@@ -134,7 +163,6 @@ window.scrollTo({top:0,behavior:'smooth'});
 
 // === PROFILE DISPLAY FEATURE ===
 let profileDiv = document.getElementById("profileSection");
-// Retrieve the name stored from the Login Page
 let storedName = localStorage.getItem("userName"); 
 
 if (profileDiv && storedName) {
