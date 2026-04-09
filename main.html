@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TasteBite | Home</title>
+
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="header-container">
+<div class="logo">
+<img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+<span>TasteBite</span>
+</div>
+<nav>
+<a href="#menu">Menu</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+<a href="feedback.html">Feedback</a> <!-- Added Feedback Link -->
+</nav>
+<span id="clock"></span>
+</div>
+</header>
+
+<section class="hero">
+<h2>Premium Food Delivery</h2>
+</section>
+
+<section id="menu">
+<h2>Our Menu</h2>
+<div id="menu-grid" class="menu-grid"></div>
+</section>
+
+<section id="order">
+<h2>Place Your Order</h2>
+<fieldset>
+<p>Selected Items</p>
+<ul id="selectedItems"></ul>
+
+<p>Order Type</p>
+<label><input type="radio" name="type"> Delivery</label>
+<label><input type="radio" name="type"> Pickup</label>
+
+<p>Payment</p>
+<select id="payment">
+<option value="">Select Payment</option>
+<option>Card</option>
+<option>Cash</option>
+<option>UPI</option>
+</select>
+
+<p>Phone Number</p>
+<input type="text" id="phone" placeholder="Enter phone number">
+
+<p>Address</p>
+<textarea id="address"></textarea>
+</fieldset>
+
+<button onclick="processOrder()" class="btn-submit">Place Order</button>
+<div id="output" class="order-output"></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-container">
+<div class="contact-info">
+<h3>Get in Touch</h3>
+<p>📞 +91 98765 43210</p>
+<p>📧 tastebite@gmail.com</p>
+<p>📍 VIT Vellore</p>
+<iframe src="https://maps.google.com/maps?q=VIT%20Vellore&output=embed"
+width="100%" height="200"></iframe>
+</div>
+
+<div class="contact-form">
+<input type="text" id="name" placeholder="Your Name">
+<input type="email" id="email" placeholder="Your Email">
+<textarea id="contactMsg" placeholder="Your Message"></textarea>
+<!-- Contact button is exactly as you originally had it -->
+<button onclick="submitContact()">Send</button>
+<p id="contactOutput"></p>
+</div>
+</div>
+</section>
+
+<footer>© TasteBite</footer>
+
+<div id="toast">Order Placed Successfully ✅</div>
+<button id="topBtn" onclick="scrollToTop()">⬆</button>
+<audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
