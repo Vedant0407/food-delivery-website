@@ -32,23 +32,80 @@
 </div>
 </header>
 
-<section id="feedback" style="max-width: 600px; margin: 50px auto; text-align: center;">
+<section id="feedback" style="max-width: 600px; margin: 30px auto 10px auto; text-align: center;">
 <h2>We Value Your Feedback</h2>
 <p style="margin-bottom: 20px;">Please let us know how your experience was!</p>
 <div class="contact-form" style="width: 100%; text-align: left;">
 <input type="text" id="feedbackName" placeholder="Your Name" required>
 <input type="email" id="feedbackEmail" placeholder="Your Email" required>
 <p style="margin-top: 15px; margin-bottom: 5px; font-weight: bold;">How would you rate our food?</p>
-<label><input type="radio" name="rating" value="excellent"> Excellent 🌟🌟🌟🌟🌟</label>
-<label><input type="radio" name="rating" value="good"> Good ⭐⭐⭐⭐</label>
-<label><input type="radio" name="rating" value="average"> Average ⭐⭐⭐</label>
+<label><input type="radio" name="rating" value="excellent"> Excellent</label>
+<label><input type="radio" name="rating" value="good"> Good</label>
+<label><input type="radio" name="rating" value="average"> Average</label>
 <textarea id="feedbackMsg" placeholder="Share your thoughts with us..." style="margin-top: 15px;"></textarea>
 <button onclick="submitFeedback()" class="btn-submit" style="width: 100%;">Submit Feedback</button>
-<p id="feedbackOutput" style="margin-top: 10px; text-align: center; font-weight: bold;"></p>
+<p id="feedbackOutput" style="margin-top: 10px; text-align: center; font-weight: bold; height: 15px;"></p>
 </div>
 </section>
 
-<footer style="position: absolute; bottom: 0; width: 100%;">© TasteBite</footer>
+<!-- RECENT REVIEWS SECTION -->
+<section id="reviews" style="max-width: 500px; margin: 0 auto; padding-bottom: 50px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2>Recent Reviews</h2>
+        <h3 style="color: #555; font-size: 18px; margin-top: 5px;">Overall Rating: 4.0 / 5.0</h3>
+    </div>
+    
+    <div style="display:flex; flex-direction:column; gap:15px;">
+        
+        <!-- Ritwik -->
+        <div style="background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #efefef;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <b style="color: #e67e22; font-size: 16px;">Ritwik</b>
+                <span style="font-weight: bold; color: #777; font-size: 14px;">5/5</span>
+            </div>
+            <p style="margin: 0; color: #555; font-size: 15px;">Amazing food! The pizza was hot, fresh, and arrived right on time. Will definitely order again!</p>
+        </div>
+        
+        <!-- Shaunak -->
+        <div style="background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #efefef;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <b style="color: #e67e22; font-size: 16px;">Shaunak</b>
+                <span style="font-weight: bold; color: #777; font-size: 14px;">4/5</span>
+            </div>
+            <p style="margin: 0; color: #555; font-size: 15px;">Very tasty, but the delivery took a bit longer than expected on a weekend.</p>
+        </div>
+        
+        <!-- Gaurav -->
+        <div style="background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #efefef;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <b style="color: #e67e22; font-size: 16px;">Gaurav</b>
+                <span style="font-weight: bold; color: #777; font-size: 14px;">4/5</span>
+            </div>
+            <p style="margin: 0; color: #555; font-size: 15px;">Loved the tacos! Perfect blend of spices and great portion sizes.</p>
+        </div>
+        
+        <!-- Mahesh -->
+        <div style="background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #efefef;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <b style="color: #e67e22; font-size: 16px;">Mahesh</b>
+                <span style="font-weight: bold; color: #777; font-size: 14px;">3/5</span>
+            </div>
+            <p style="margin: 0; color: #555; font-size: 15px;">The food was decent, but it arrived a little cold. The packaging was good though.</p>
+        </div>
+        
+        <!-- Arnav -->
+        <div style="background: white; padding: 18px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #efefef;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <b style="color: #e67e22; font-size: 16px;">Arnav</b>
+                <span style="font-weight: bold; color: #777; font-size: 14px;">4/5</span>
+            </div>
+            <p style="margin: 0; color: #555; font-size: 15px;">Nice packaging and very hygienic. The UI for ordering is also incredibly smooth.</p>
+        </div>
+        
+    </div>
+</section>
+
+<footer>© TasteBite</footer>
 
 <script src="script.js"></script>
 
