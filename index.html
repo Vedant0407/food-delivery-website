@@ -41,7 +41,7 @@
     
     <p id="loginError" style="color: red; font-size: 14px; margin-top: 10px; text-align: center; font-weight: bold; height: 15px;"></p>
     
-    <button onclick="handleLogin()" class="btn-submit" style="width: 100%; margin-top: 15px;">LOGIN</button>
+    <button onclick="handleLogin()" class="btn-submit" style="width: 100%; margin-top: 15px;">Enter Website</button>
 </div>
 </section>
 
@@ -65,7 +65,6 @@ function handleLogin() {
         return; 
     }
     
-    // Using our new Email checker
     if(isValidEmail(email) === false) {
         errorText.innerText = "Error: Please enter a valid Email address!";
         return; 
@@ -78,6 +77,8 @@ function handleLogin() {
     
     errorText.innerText = "";
     localStorage.setItem("userName", name); 
+    // WE ADDED THIS: Now the browser remembers the email too for the popup
+    localStorage.setItem("userEmail", email); 
     window.location.href = 'main.html';
 }
 </script>
