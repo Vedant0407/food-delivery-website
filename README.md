@@ -6,7 +6,7 @@ This project demonstrates real-world features like login, cart management, order
 ---
 
 ## Live Demo
-https://yourusername.github.io/food-delivery-website/
+https://Vedant0407.github.io/food-delivery-website/
 
 ---
 
