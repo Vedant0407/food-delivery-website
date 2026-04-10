@@ -1,72 +1,128 @@
-# food-delivery-website
-# TasteBite 🍔🍕
+# TasteBite – Food Delivery Website
 
-> A professional, multi-page food delivery platform built as a comprehensive showcase of modern web development concepts.
-
-![TasteBite Banner/Screenshot](<Add a URL to a screenshot of your website here>)
-
-**Live Demo:** [https://vedant0407.github.io/food-delivery-website/](https://vedant0407.github.io/food-delivery-website/)
+A complete frontend food delivery web application built using HTML, CSS, and JavaScript.  
+This project demonstrates real-world features like login, cart management, order validation, and user interaction.
 
 ---
 
-## 📖 About The Project
+## Live Demo
+https://yourusername.github.io/food-delivery-website/
 
-TasteBite is a feature-rich, multipage food ordering website. It was designed to provide a premium user experience with dynamic interfaces, vibrant styling, and interactive components. This project applies foundational and advanced web technologies, demonstrating mastery in structure, logic, and design for a college assessment.
+---
 
-### 🎯 Key Objectives Achieved
+## Features
 
-* **Multi-Page Architecture:** Seamless navigation across Home, Menu, Order, and About pages.
-* **Modern UI/UX:** High-quality, aesthetic design with interactive hover effects and smooth transitions.
-* **Dynamic Logic:** The use of JavaScript control structures for processing tasks.
-* **Interactive Elements:** Leveraging HTML5 forms and canvas drawing for enhanced interactivity.
+### Login System
+- User enters name and email
+- Email validation included
+- Stores user data using localStorage
+- Redirects to main website
 
-## ✨ Features
+### Menu System
+- Dynamic food items (Pizza, Burger, Sushi, etc.)
+- Click to add items to order
 
-* **Interactive Menu:** Browse through categorized food items beautifully rendered onto the page.
-* **Functional Order Flow:** Detailed order forms processing various input methods for a complete user experience.
-* **Custom Graphics:** Custom visual content rendered to the page using HTML5 Canvas.
-* **Fully Responsive Design:** Adapts fluidly across mobile, tablet, and desktop viewports.
+### Cart System
+- Add items to cart
+- Quantity tracking (e.g., 2x Pizza)
+- Remove items using remove button
 
-## 🛠️ Built With & Technical Implementation
+### Order System
+- Select Delivery or Pickup
+- Choose payment method
+- Enter phone number and address
+- Full validation before placing order
+- Success message after order placement
 
-This project implements specific technical requirements to fulfill college assessment criteria:
+### Contact Section
+- User can send message
+- Email validation included
 
-* **HTML5:** Utilized semantic tags (`<header>`, `<nav>`, `<section>`, `<article>`, `<footer>`) for better accessibility and SEO.
-* **CSS3:** 
-    * Advanced layout configurations using Flexbox/Grid.
-    * Use of **Z-index** manipulation for layered UI elements (e.g., sticky navigation bars, overlapping decorative elements, popups).
-* **JavaScript (Vanilla):**
-    * **Loops:** Leveraged `for`, `while`, and `do-while` loops to handle repetitive tasks.
-    * DOM manipulation and event handling.
-* **HTML Forms:** Comprehensive order forms utilizing:
-    * `Radio` buttons.
-    * `Checkboxes`.
-    * `Select` dropdowns.
-    * `Textarea` elements.
-* **HTML5 Canvas:** Custom visual graphics drawn via JavaScript using the Canvas API.
+### Feedback System
+- Submit feedback with rating
+- Input validation
+- Static reviews display
 
-## 🚀 Getting Started
+### Profile Feature
+- Displays logged-in user info
+- Popup profile with name and email
+- Uses localStorage
 
-To get a local copy up and running, follow these simple steps.
+### Extra Features
+- Live digital clock
+- Scroll-to-top button
+- Click sound effect
+- Basic responsive layout
 
-### Prerequisites
+---
 
-You only need a modern web browser to run this application (Google Chrome, Mozilla Firefox, Safari, Edge).
+## Project Structure
 
-### Installation
+food-delivery-website/
+│── index.html
+│── main.html
+│── feedback.html
+│── style.css
+│── script.js
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/vedant0407/food-delivery-website.git
-Navigate into the directory and open index.html in your favorite browser.
-🌐 Internet Terminology Explained
-As part of this project's documentation, here are brief explanations of key internet terminologies utilized during deployment:
+---
 
-HTTP/HTTPS: The protocols used for securely transferring data between the GitHub server and your web browser.
-Domain Name (github.io): The human-readable web address used to locate and access this site on the Internet.
-Web Hosting: GitHub Pages acts as the server that stores these website files and serves them to users worldwide 24/7.
-Web Browser: The client application used to parse our HTML, CSS, and JS files and render them into the graphical TasteBite interface.
-👤 Author
-Vedant
+## Technologies Used
 
-GitHub: @vedant0407
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla JS)  
+- LocalStorage API  
+
+---
+
+## Key Concepts Used
+
+- DOM Manipulation  
+- Event Handling  
+- Form Validation  
+- Local Storage  
+- Dynamic UI Rendering  
+- Conditional Logic  
+
+---
+
+## How to Run
+
+1. Download or clone the repository  
+2. Open index.html in a browser  
+3. Enter details and explore the website  
+
+---
+
+## Deployment (GitHub Pages)
+
+1. Go to repository settings  
+2. Open Pages  
+3. Select:
+   - Branch: main  
+   - Folder: /root  
+4. Save  
+5. Your site will be live  
+
+---
+
+## Future Improvements
+
+- Add total bill calculation  
+- Add backend (Node.js or Firebase)  
+- User authentication system  
+- Advanced mobile responsiveness  
+- Payment gateway integration  
+
+---
+
+## Author
+
+Vedant  
+
+---
+
+## License
+
+This project is for educational purposes.
